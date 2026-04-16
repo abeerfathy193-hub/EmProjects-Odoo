@@ -9,10 +9,12 @@
                     <group>
                         <field name="name"/>
                         <field name="description"/>
+                        <field name="due_date"/>
                     </group>
                     <notebook>
                         <page string="Team" name="team">
                             <field name="employee_ids" widget="many2many_tags"/>
+
                         </page>
                     </notebook>
                 </sheet>
