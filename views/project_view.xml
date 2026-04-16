@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <record id="view_em_project_tree" model="ir.ui.view">
+        <field name="name">em.project.tree</field>
+        <field name="model">em.project</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="description" />
+                <field name="due_date" />
+            </tree>
+        </field>
+    </record>
+
     <record id="view_em_project_form" model="ir.ui.view">
         <field name="name">em.project.form</field>
         <field name="model">em.project</field>
@@ -7,21 +19,21 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="description"/>
-                        <field name="due_date"/>
+                        <field name="name" />
+                        <field name="description" />
+                        <field name="due_date" />
                     </group>
                     <notebook>
                         <page string="Team" name="team">
-                            <field name="employee_ids" widget="many2many_tags"/>
+                            <field name="employee_ids" widget="many2many_tags" />
 
                         </page>
                     </notebook>
                 </sheet>
                 <div class="oe_chatter">
-                    <field name="message_follower_ids"/>
-                    <field name="activity_ids"/>
-                    <field name="message_ids" options="{'post_refresh': 'always'}"/>
+                    <field name="message_follower_ids" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" options="{'post_refresh': 'always'}" />
                 </div>
             </form>
         </field>
@@ -33,6 +45,7 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_project_root" name="Project Management" sequence="20"/>
-    <menuitem id="menu_project_list" name="Projects" parent="menu_project_root" action="action_em_project"/>
+    <menuitem id="menu_project_root" name="Project Management" sequence="20" />
+    <menuitem id="menu_project_list" name="Projects" parent="menu_project_root"
+        action="action_em_project" />
 </odoo>
