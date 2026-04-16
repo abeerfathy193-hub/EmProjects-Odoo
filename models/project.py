@@ -7,6 +7,7 @@ class EmProject(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     name = fields.Char(string='Project Name', required=True)
     description = fields.Text(string='Description')
+    due_date = fields.Date(string='Due Date')
     # علاقة Many2many مع الموظفين
     # أودو هيكريه جدول وسيط في الداتابيز لوحده يربط الـ IDs ببعض
     employee_ids = fields.Many2many(
